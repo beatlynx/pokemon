@@ -109,7 +109,7 @@ article {
 }
 
 h1{
-    color:#ff69b4;
+    color:#ffffff;
     font-size:1.5em;
     font-weight:700;
     text-align:center;
@@ -117,12 +117,12 @@ h1{
 }
 
 h1 a {
-    color:#ff69b4;
+    color:#ffffff;
     text-decoration: none;
 }
 
 h1 a:focus, h1 a:hover {
-    color:#4d6ad8;
+    color:#ff14df;
 }
 
 #trainer-info {
@@ -176,9 +176,9 @@ nav ul li a,
 #copy2reddit [data-clipboard-target] {
     display:inline-block;
     margin:0 0.5em 0 0;
-    background-color:#4d6ad8;
+    background-color:#a5a5a5;
     font-weight:700;
-    color:#f0f0f0;
+    color:#32d6e5;
     padding:0.5em 0;
     border-radius:0.25em;
     line-height: 1.45;
@@ -186,7 +186,7 @@ nav ul li a,
     text-align:center
 }
 nav ul li a:hover, #copy2reddit [data-clipboard-target]:hover {
-    color:#f0f0f0;
+    color:#32d6e5;
 }
 nav ul li.current::after {
     width: 0;
@@ -219,7 +219,7 @@ nav > ul > li:not(:first-child)::before {
 }
 
 h2{
-    background-color:#f0f0f0;
+    background-color:#32d6e5;
     color:#4d6ad8;
     font-size:1.5em;
     font-weight:700;
@@ -262,7 +262,7 @@ table {
 
 table thead tr {
     background: url(bg-th.gif);
-    color: #f0f0f0;
+    color: #32d6e5;
 }
 
 thead th[rowspan], thead th[class] { border-bottom: 0.25em solid transparent; }
@@ -1693,7 +1693,7 @@ body.shiny tbody tr {
 }
 #pokemon-info .carousel a:hover::before{
     color:#4d6ad8;
-    text-shadow: 0 0 1em #f0f0f0
+    text-shadow: 0 0 1em #32d6e5
 }
 
 #pokemon-info h1 {    
