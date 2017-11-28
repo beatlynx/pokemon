@@ -22,11 +22,11 @@ time, mark, audio, video {
 body {
     background-color: #32d6e5;
     font: 100%/1.5 "Open Sans", Helvetica, Arial, sans-serif;
-    color: #000000;
+    color: #ffffff;
     overflow-y: scroll
 }
 body,a,a:hover,a:focus,caption{
-    color:#000000
+    color:#ffffff
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
