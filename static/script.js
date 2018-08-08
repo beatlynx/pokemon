@@ -340,12 +340,7 @@ function getSpriteClass(pokemon) {
     return cssClass;
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
-    var modelUrl = "https://play.pokemonshowdown.com/sprites/";
-    if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
-        modelUrl += "xyani";
-    } else {
-        modelUrl += "xyani";
-    }
+    var modelUrl = "https://play.pokemonshowdown.com";
     modelUrl += "/sprites/xyani" + (isShiny ? "-shiny" : '') + "/" + spriteClass;
     if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1 && spriteClass.indexOf("-alola") == -1) {
         if (gender == "F" && dexNo !== 32) {
