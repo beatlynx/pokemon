@@ -340,13 +340,8 @@ function getSpriteClass(pokemon) {
     return cssClass
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
-    var modelUrl = "http://www.pkparaiso.com/imagenes/";
-    if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
-        modelUrl += "sol-luna";
-    } else {
-        modelUrl += "xy";
-    }
-    modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
+    var modelUrl = "http://www.play.pokemonshowdown.com";
+    modelUrl += "/sprites/xyani" + (isShiny ? "-shiny" : '') + "/" + spriteClass
     if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1 && spriteClass.indexOf("-alola") == -1) {
         if (gender == "F") {
             modelUrl += dexNo == 29 ? "_f" : "-f";
@@ -361,8 +356,6 @@ function getModelUrl(dexNo, spriteClass, gender, isShiny) {
             modelUrl  = modelUrl.replace("mr", "mr.");
         } else if (dexNo == 772) { // Type: Null
             modelUrl  = modelUrl.replace("-", '');
-        } else if (dexNo == 796 && !isShiny) { // Xurkitree
-            modelUrl  = "http://www.smogon.com/dex/media/sprites/xy/xurkitree";
         }
     }
     return modelUrl  + ".gif";
