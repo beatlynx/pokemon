@@ -340,19 +340,16 @@ function getSpriteClass(pokemon) {
     return cssClass
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
-    var modelUrl = "http://www.pkparaiso.com/imagenes/";
+    var modelUrl = "https://play.pokemonshowdown.com/sprites/";
     if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
-        modelUrl += "sol-luna";
+        modelUrl += "xyani";
     } else {
-        modelUrl += "xy";
+        modelUrl += "xyani";
     }
-    modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
+    modelUrl += "/sprites/xyani" + (isShiny ? "-shiny" : '') + "/" + spriteClass
     if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1 && spriteClass.indexOf("-alola") == -1) {
-        if (gender == "F") {
-            modelUrl += dexNo == 29 ? "_f" : "-f";
-        } else {
-            modelUrl  = modelUrl.replace("-male", '');
-            if (dexNo == 32) modelUrl += "_m";
+        if (gender == "F" && dexNo !== 32) {
+            modelUrl += dexNo == 29 ? "-f";
         }
     } else {
         if (TAPUS.indexOf(dexNo) > -1) {
