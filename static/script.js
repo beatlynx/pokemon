@@ -337,14 +337,22 @@ function getSpriteClass(pokemon) {
         }
     }
     cssClass = cssClass.toLowerCase().replace(/é/g, 'e').replace(' ', '_').replace('\'', '').replace('.', '').replace(':', '').replace('%', '');
-    return cssClass;
+    return cssClass
 }
 function getModelUrl(dexNo, spriteClass, gender, isShiny) {
-    var modelUrl = "https://play.pokemonshowdown.com";
-    modelUrl += "/sprites/xyani" + (isShiny ? "-shiny" : '') + "/" + spriteClass;
+    var modelUrl = "http://www.pkparaiso.com/imagenes/";
+    if (dexNo > 721 || spriteClass.endsWith("-alola") || spriteClass.endsWith("-10")) {
+        modelUrl += "sol-luna";
+    } else {
+        modelUrl += "xy";
+    }
+    modelUrl += "/sprites/animados" + (isShiny ? "-shiny" : '') + "/" + spriteClass
     if (POKEMON_WITH_GENDER_DIFFERENCES.indexOf(dexNo) > -1 && spriteClass.indexOf("-alola") == -1) {
-        if (gender == "F" && dexNo !== 32) {
-          modelUrl += dexNo == 29 ? "_f" : "-f";
+        if (gender == "F") {
+            modelUrl += dexNo == 29 ? "_f" : "-f";
+        } else {
+            modelUrl  = modelUrl.replace("-male", '');
+            if (dexNo == 32) modelUrl += "_m";
         }
     } else {
         if (TAPUS.indexOf(dexNo) > -1) {
@@ -481,7 +489,7 @@ function getValue(field) {
 function tryGetValue(entry, whitelist) {
     for (var i = 0; i < whitelist.length; i++) {
         var field = "gsx$" + whitelist[i];
-        if (entry[field] && entry[field].$t) return entry[field].$t;
+        if (entry[field] && entry[field].$t) return entry[field].$t
     }
     return undefined;
 }
@@ -839,7 +847,7 @@ function displayPokemon(){
             if ($this.hasClass("selected")) {
                 $this.attr("title", "Click to " + (isForIndividualPokemon ? "display more information and " : '') + "add to Reddit table.");
             } else {
-                $this.attr("title", "Click to remove from Reddit table.");
+                $this.attr("title", "Click to remove from Reddit table.")
                 if (isForIndividualPokemon) {
                     populateModal($this);
                     // Unhide modal
